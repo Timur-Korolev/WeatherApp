@@ -42,7 +42,7 @@ class CurrentWeatherViewController: UIViewController {
     
     func setInterface() {
         let iconName = currentWeather.weather.first??.icon
-        let condition = currentWeather.weather.first??.icon
+        let condition = currentWeather.weather.first??.description
         let temp = currentWeather.main?.temp
         
         
