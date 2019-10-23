@@ -9,7 +9,7 @@
 import Foundation
 
 struct OfferModel: Codable {
-    let weather: [WeatherOfferModel?]
+    let weather: [WeatherOfferModel]?
     let main: MainOfferModel?
     let wind: WindOfferModel?
 }
