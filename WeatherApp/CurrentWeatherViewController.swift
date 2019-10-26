@@ -18,13 +18,17 @@ class CurrentWeatherViewController: UIViewController {
     
     private let gradientLayer = CAGradientLayer()
     private let weatherURL = "https://api.openweathermap.org/data/2.5/weather?id=627907&units=metric&appid=90178019185f529f9ac20989abd272de"
+    private var currentWeather: OfferModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundView.layer.addSublayer(gradientLayer)
-        getWeather()
+        DataManager.shared.getWeather(from: weatherURL) { (currentWeather) in
+            DispatchQueue.main.async {
+                self.setInterface(with: currentWeather)
+            }
+        }
     }
-    
     private func setBlueGradientBackground() {
         let topColor = UIColor(red: 95.0/255.0, green: 165.0/255.0, blue: 1.0, alpha: 1.0).cgColor
         let bottomColor = UIColor(red: 72.0/255.0, green: 114.0/255.0, blue: 184.0/255.0, alpha: 1.0).cgColor
@@ -63,24 +67,24 @@ class CurrentWeatherViewController: UIViewController {
         
     }
     
-    private func getWeather() {
-        guard let url = URL(string: weatherURL) else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
-            
-            guard let data = data else { return }
-            
-            do {
-                let currentWeather = try JSONDecoder().decode(OfferModel.self, from: data)
-                DispatchQueue.main.async {
-                    self.setInterface(with: currentWeather)
-                }
-            } catch let error {
-                print(error)
-            }
-            
-        }.resume()
-    }
+//    private func getWeather() {
+//        guard let url = URL(string: weatherURL) else { return }
+//
+//        URLSession.shared.dataTask(with: url) { (data, _, _) in
+//
+//            guard let data = data else { return }
+//
+//            do {
+//                let currentWeather = try JSONDecoder().decode(OfferModel.self, from: data)
+//                DispatchQueue.main.async {
+//                    self.setInterface(with: currentWeather)
+//                }
+//            } catch let error {
+//                print(error)
+//            }
+//
+//        }.resume()
+//    }
     
 }
 

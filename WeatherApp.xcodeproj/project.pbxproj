@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842FFA4D23644669000A31D8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842FFA4C23644669000A31D8 /* DataManager.swift */; };
 		846FA269235B38C900B50E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FA268235B38C900B50E98 /* AppDelegate.swift */; };
 		846FA26B235B38C900B50E98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FA26A235B38C900B50E98 /* SceneDelegate.swift */; };
 		846FA26D235B38C900B50E98 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FA26C235B38C900B50E98 /* CurrentWeatherViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		842FFA4C23644669000A31D8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		846FA265235B38C900B50E98 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846FA268235B38C900B50E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		846FA26A235B38C900B50E98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				846FA268235B38C900B50E98 /* AppDelegate.swift */,
 				84F7F9A6235E18060010CF98 /* Model */,
 				846FA26A235B38C900B50E98 /* SceneDelegate.swift */,
+				842FFA4C23644669000A31D8 /* DataManager.swift */,
 				846FA26C235B38C900B50E98 /* CurrentWeatherViewController.swift */,
 				846FA26E235B38C900B50E98 /* Main.storyboard */,
 				846FA271235B38CA00B50E98 /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				846FA26D235B38C900B50E98 /* CurrentWeatherViewController.swift in Sources */,
+				842FFA4D23644669000A31D8 /* DataManager.swift in Sources */,
 				847C5576235B542900BC0B13 /* OfferModel.swift in Sources */,
 				846FA269235B38C900B50E98 /* AppDelegate.swift in Sources */,
 				846FA26B235B38C900B50E98 /* SceneDelegate.swift in Sources */,
