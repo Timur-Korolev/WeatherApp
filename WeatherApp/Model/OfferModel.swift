@@ -8,10 +8,15 @@
 
 import Foundation
 
+struct ForecastModel: Codable {
+    let list: [OfferModel]?
+}
+
 struct OfferModel: Codable {
     let weather: [WeatherOfferModel]?
     let main: MainOfferModel?
     let wind: WindOfferModel?
+    let dt_txt: String?
 }
 
 struct WeatherOfferModel: Codable {
@@ -20,10 +25,10 @@ struct WeatherOfferModel: Codable {
 }
 
 struct MainOfferModel: Codable {
-    let temp: Int?
-    let humidity: Int?
+    let temp: Float?
+    let humidity: Float?
 }
 
 struct WindOfferModel: Codable {
-    let speed: Int?
+    let speed: Float?
 }

@@ -19,6 +19,7 @@ class CurrentWeatherViewController: UIViewController {
     private let gradientLayer = CAGradientLayer()
     private let weatherURL = "https://api.openweathermap.org/data/2.5/weather?id=627907&units=metric&appid=90178019185f529f9ac20989abd272de"
     private var currentWeather: OfferModel?
+    private var fiveDayForecast: ForecastModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,12 @@ class CurrentWeatherViewController: UIViewController {
         }
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let forecastVC = segue.destination as! ForecastViewController
+        forecastVC.getForecast()
+    }
+    
     
 //    private func getWeather() {
 //        guard let url = URL(string: weatherURL) else { return }
