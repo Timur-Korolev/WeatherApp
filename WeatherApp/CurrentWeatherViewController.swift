@@ -30,6 +30,7 @@ class CurrentWeatherViewController: UIViewController {
             }
         }
     }
+    
     private func setBlueGradientBackground() {
         let topColor = UIColor(red: 95.0/255.0, green: 165.0/255.0, blue: 1.0, alpha: 1.0).cgColor
         let bottomColor = UIColor(red: 72.0/255.0, green: 114.0/255.0, blue: 184.0/255.0, alpha: 1.0).cgColor
@@ -65,33 +66,6 @@ class CurrentWeatherViewController: UIViewController {
         } else {
             self.setBlueGradientBackground()
         }
-        
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let forecastVC = segue.destination as! ForecastViewController
-        forecastVC.getForecast()
-    }
-    
-    
-//    private func getWeather() {
-//        guard let url = URL(string: weatherURL) else { return }
-//
-//        URLSession.shared.dataTask(with: url) { (data, _, _) in
-//
-//            guard let data = data else { return }
-//
-//            do {
-//                let currentWeather = try JSONDecoder().decode(OfferModel.self, from: data)
-//                DispatchQueue.main.async {
-//                    self.setInterface(with: currentWeather)
-//                }
-//            } catch let error {
-//                print(error)
-//            }
-//
-//        }.resume()
-//    }
-    
 }
 

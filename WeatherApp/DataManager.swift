@@ -29,4 +29,20 @@ class DataManager {
         }.resume()
     }
     
+    func getForecast(from url: String, completion: @escaping (ForecastModel) -> Void) {
+        guard let url = URL(string: url) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            
+            guard let data = data else { return }
+            
+            do {
+                let forecast = try JSONDecoder().decode(ForecastModel.self, from: data)
+                completion(forecast)
+            } catch let error {
+                print(error)
+            }
+            
+        }.resume()
+    }
 }

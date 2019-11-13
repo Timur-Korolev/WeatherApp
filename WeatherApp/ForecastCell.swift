@@ -15,12 +15,13 @@ class ForecastCell: UITableViewCell {
         let condition = weather.weather?.first?.description
         let temp = weather.main?.temp
         let date = weather.dt_txt
+        let suffix = iconName?.suffix(1) ?? "n"
         
         imageView?.image = UIImage(named: iconName ?? "10d")
+        if suffix == "n" { imageView?.backgroundColor = .gray }
         textLabel?.text = date
         detailTextLabel?.text = "\(temp ?? 0)ºC \(condition ?? "zz")"
         
     }
-
 }
 
